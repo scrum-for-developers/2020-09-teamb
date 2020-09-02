@@ -69,3 +69,4 @@ To release for example version 1.2 follow these steps:
 
 * Bertram
 * Elena
+* Jan
