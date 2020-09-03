@@ -39,9 +39,19 @@ public class InsertBook {
     context.putObject("LAST_INSERTED_BOOK", isbn);
   }
 
+  @When("a librarian adds a book with {string}, {string}, {string}, {int}, {string} and {string}")
+  public void whenABookWithISBNAndDescriptionIsAdded(
+      String title, String author, String description, int edition, String year, String isbn) {
+    seleniumAdapter.gotoPage(Page.INSERTBOOKS);
+    fillInsertBookFormWithDesc(title, author, description, edition, isbn, year);
+    seleniumAdapter.clickOnPageElement(PageElement.ADDBOOKBUTTON);
+    context.putObject("LAST_INSERTED_BOOK", isbn);
+  }
+
   // *****************
   // *** T H E N *****
   // *****************
+
   @Then("the page contains error message for field {string}")
   public void pageContainsErrorMessage(String field) {
     String errorMessage = seleniumAdapter.getTextFromElement(PageElement.errorFor(field));
@@ -58,5 +68,11 @@ public class InsertBook {
     seleniumAdapter.typeIntoField("isbn", isbn);
     seleniumAdapter.typeIntoField("author", author);
     seleniumAdapter.typeIntoField("yearOfPublication", year);
+  }
+
+  private void fillInsertBookFormWithDesc(
+      String title, String author, String description, Integer edition, String isbn, String year) {
+    fillInsertBookForm(title, author, edition, isbn, year);
+    seleniumAdapter.typeIntoField("description", description);
   }
 }

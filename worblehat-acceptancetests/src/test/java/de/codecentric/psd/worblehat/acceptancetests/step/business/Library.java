@@ -81,6 +81,14 @@ public class Library {
     assertThat(books, everyItem(hasProperty("isbn", is(isbn))));
   }
 
+  @Then("the library contains 1 copy of the book with {string}")
+  public void shouldContainABook(String isbn) {
+    waitForServerResponse();
+    Set<Book> books = bookService.findBooksByIsbn(isbn);
+    assertThat(books.size(), is(1));
+    assertThat(books, everyItem(hasProperty("isbn", is(isbn))));
+  }
+
   private void waitForServerResponse() {
     // normally you would have much better mechanisms for waiting for a
     // server response. We are choosing a simple solution for the sake of this

@@ -18,6 +18,8 @@ public class Book implements Serializable {
   private String author;
   private String edition;
 
+  private String description;
+
   // TODO: convert String to an ISBN class, that ensures a valid ISBN
   private String isbn;
   private int yearOfPublication;
@@ -53,12 +55,37 @@ public class Book implements Serializable {
     this.yearOfPublication = yearOfPublication;
   }
 
+  /**
+   * Creates a new book instance.
+   *
+   * @param title the title
+   * @param author the author
+   * @param description the description
+   * @param edition the edition
+   * @param isbn the isbn
+   * @param yearOfPublication the yearOfPublication
+   */
+  public Book(
+      @Nonnull String title,
+      @Nonnull String author,
+      @Nonnull String description,
+      @Nonnull String edition,
+      @Nonnull String isbn,
+      int yearOfPublication) {
+    this(title, author, edition, isbn, yearOfPublication);
+    this.description = description;
+  }
+
   public String getTitle() {
     return title;
   }
 
   public String getAuthor() {
     return author;
+  }
+
+  public String getDescription() {
+    return description;
   }
 
   public String getEdition() {

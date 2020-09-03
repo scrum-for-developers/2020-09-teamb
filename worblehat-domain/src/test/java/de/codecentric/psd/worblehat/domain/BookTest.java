@@ -9,10 +9,13 @@ import org.junit.jupiter.api.Test;
 public class BookTest {
 
   Book BOOK;
+  Book BOOKWITHDESCRIPTION;
 
   @BeforeEach
   public void setup() {
-    BOOK = new Book("Titel", "Author", "2", "1", 1234);
+    BOOK = new Book("Title", "Author", "2", "1", 1234);
+    BOOKWITHDESCRIPTION =
+        new Book("Title", "Author", "Interesting Book with Title and Description", "2", "1", 1234);
   }
 
   @Test
@@ -67,5 +70,11 @@ public class BookTest {
     BOOK.borrowNowByBorrower("a@bc.de");
     BOOK.borrowNowByBorrower("a@bc.ru");
     assertThat(BOOK.getBorrowing().getBorrowerEmailAddress(), is("a@bc.de"));
+  }
+
+  @Test
+  public void shouldCreateBookWithDescription() {
+    assertThat(
+        BOOKWITHDESCRIPTION.getDescription(), is("Interesting Book with Title and Description"));
   }
 }
