@@ -28,9 +28,15 @@
 		<release version="1.1.0" date="2020-09-03"
 			description="Better user guidance">
 			<action dev="betaworblers" type="update">
-				WP-104 | Better validation error messages
+				WP-104 | Better validation error messages.
 			</action>
 		</release>
-
+		
+		<release version="1.2.0-Snapshot" date="2020-09-03"
+			description="Security fixes">
+			<action dev="betaworblers" type="update">
+				WP-125 | Upgrade Spring Boot version and other dependencies.
+			</action>
+		</release>
 	</body>
 </document>
