@@ -33,7 +33,7 @@
 		</release>
 		
 		<release version="1.2.0-Snapshot" date="2020-09-03"
-			description="Security fixes">
+			description="Improve product quality and enhance security">
 			<action dev="betaworblers" type="update">
 				WP-125 | Upgrade Spring Boot version and other dependencies.
 			</action>
