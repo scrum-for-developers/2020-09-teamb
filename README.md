@@ -65,6 +65,18 @@ To release for example version 1.2 follow these steps:
 1. Let jenkins build the release and deploy it to the test and production environments
 1. Bump the version for the next development iteration: `mvn -Pinclude-acceptancetests versions:set -DnewVersion=1.3-SNAPSHOT -DgenerateBackupPoms=false`
 
+## Update dependencies
+
+Check for updated dependencies
+```
+./mvnw versions:display-dependency-updates
+```
+
+Use latest releases
+```
+./mvnw versions:use-latest-releases
+```
+
 ## Team
 
 * Bertram
