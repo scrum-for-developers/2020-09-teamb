@@ -46,6 +46,7 @@ public class InsertBookController {
           bookService.createBook(
               bookDataFormData.getTitle(),
               bookDataFormData.getAuthor(),
+              bookDataFormData.getDescription(),
               bookDataFormData.getEdition(),
               bookDataFormData.getIsbn(),
               Integer.parseInt(bookDataFormData.getYearOfPublication()));

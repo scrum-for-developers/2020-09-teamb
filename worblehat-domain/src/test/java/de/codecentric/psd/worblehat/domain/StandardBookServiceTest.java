@@ -133,6 +133,7 @@ public class StandardBookServiceTest {
     bookService.createBook(
         aBook.getTitle(),
         aBook.getAuthor(),
+        aBook.getDescription(),
         aBook.getEdition(),
         aBook.getIsbn(),
         aBook.getYearOfPublication());
@@ -156,6 +157,7 @@ public class StandardBookServiceTest {
     bookService.createBook(
         aBook.getTitle(),
         aBook.getAuthor(),
+        aBook.getDescription(),
         aBook.getEdition(),
         aBook.getIsbn(),
         aBook.getYearOfPublication());
@@ -168,6 +170,7 @@ public class StandardBookServiceTest {
     bookService.createBook(
         aBook.getTitle() + "X",
         aBook.getAuthor(),
+        aBook.getDescription(),
         aBook.getEdition(),
         aBook.getIsbn(),
         aBook.getYearOfPublication());
@@ -180,6 +183,7 @@ public class StandardBookServiceTest {
     bookService.createBook(
         aBook.getTitle(),
         aBook.getAuthor() + "X",
+        aBook.getDescription(),
         aBook.getEdition(),
         aBook.getIsbn(),
         aBook.getYearOfPublication());

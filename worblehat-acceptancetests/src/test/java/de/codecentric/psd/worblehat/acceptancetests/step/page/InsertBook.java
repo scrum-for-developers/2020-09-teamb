@@ -57,6 +57,7 @@ public class InsertBook {
     String errorMessage = seleniumAdapter.getTextFromElement(PageElement.errorFor(field));
     assertThat(errorMessage, notNullValue());
   }
+
   // *****************
   // *** U T I L *****
   // *****************

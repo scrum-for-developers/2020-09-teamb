@@ -18,6 +18,7 @@ public class Book implements Serializable {
   private String author;
   private String edition;
 
+  // @Column(columnDefinition = "TEXT")
   private String description;
 
   // TODO: convert String to an ISBN class, that ensures a valid ISBN
@@ -106,6 +107,10 @@ public class Book implements Serializable {
 
   public void setAuthor(String author) {
     this.author = author;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public void setEdition(String edition) {

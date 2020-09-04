@@ -37,7 +37,12 @@ public class Library {
   public void createLibraryWithSingleBookWithGivenIsbn(String isbn) {
     Book book = DemoBookFactory.createDemoBook().withISBN(isbn).build();
     bookService.createBook(
-        book.getTitle(), book.getAuthor(), book.getEdition(), isbn, book.getYearOfPublication());
+        book.getTitle(),
+        book.getAuthor(),
+        book.getDescription(),
+        book.getEdition(),
+        isbn,
+        book.getYearOfPublication());
   }
 
   @Given("{string} has borrowed books {string}")
@@ -53,6 +58,7 @@ public class Library {
           .createBook(
               book.getTitle(),
               book.getAuthor(),
+              book.getDescription(),
               book.getEdition(),
               isbn,
               book.getYearOfPublication())
