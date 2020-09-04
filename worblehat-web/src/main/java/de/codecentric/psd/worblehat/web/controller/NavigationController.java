@@ -10,6 +10,6 @@ public class NavigationController {
 
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public String home() {
-    return "home";
+    return Page.HOME.getUrl();
   }
 }

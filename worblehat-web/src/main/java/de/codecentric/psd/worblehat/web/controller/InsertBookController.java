@@ -40,7 +40,7 @@ public class InsertBookController {
       BindingResult result) {
 
     if (result.hasErrors()) {
-      return "insertBooks";
+      return Page.INSERTBOOKS.getUrl();
     } else {
       Optional<Book> book =
           bookService.createBook(
@@ -54,7 +54,7 @@ public class InsertBookController {
       } else {
         LOG.debug("failed to create new book with: " + bookDataFormData.toString());
       }
-      return "redirect:bookList";
+      return "redirect:" + Page.BOOKLIST.getUrl();
     }
   }
 }

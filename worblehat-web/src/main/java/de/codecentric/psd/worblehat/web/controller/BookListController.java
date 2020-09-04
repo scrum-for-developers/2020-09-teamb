@@ -25,6 +25,6 @@ public class BookListController {
   public String setupForm(ModelMap modelMap) {
     List<Book> books = bookService.findAllBooks();
     modelMap.addAttribute("books", books);
-    return "bookList";
+    return Page.BOOKLIST.getUrl();
   }
 }

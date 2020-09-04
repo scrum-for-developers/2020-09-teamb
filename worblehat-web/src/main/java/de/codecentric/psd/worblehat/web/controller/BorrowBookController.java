@@ -41,27 +41,27 @@ public class BorrowBookController {
       @ModelAttribute("borrowFormData") @Valid BookBorrowFormData borrowFormData,
       BindingResult result) {
     if (result.hasErrors()) {
-      return "borrow";
+      return Page.BORROWBOOK.getUrl();
     }
     Set<Book> books = bookService.findBooksByIsbn(borrowFormData.getIsbn());
     if (books.isEmpty()) {
       result.rejectValue("isbn", "noBookExists");
-      return "borrow";
+      return Page.BORROWBOOK.getUrl();
     }
     Optional<Borrowing> borrowing =
         bookService.borrowBook(borrowFormData.getIsbn(), borrowFormData.getEmail());
 
     return borrowing
-        .map(b -> "home")
+        .map(b -> Page.HOME.getUrl())
         .orElseGet(
             () -> {
               result.rejectValue("isbn", "noBorrowableBooks");
-              return "borrow";
+              return Page.BORROWBOOK.getUrl();
             });
   }
 
   @ExceptionHandler(Exception.class)
   public String handleErrors(Exception ex, HttpServletRequest request) {
-    return "home";
+    return Page.HOME.getUrl();
   }
 }
