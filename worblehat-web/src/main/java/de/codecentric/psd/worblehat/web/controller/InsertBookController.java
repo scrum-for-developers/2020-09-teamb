@@ -50,9 +50,9 @@ public class InsertBookController {
               bookDataFormData.getIsbn(),
               Integer.parseInt(bookDataFormData.getYearOfPublication()));
       if (book.isPresent()) {
-        LOG.info("new book instance is created: " + book.get());
+        LOG.info("new book instance is created: {}", book.get());
       } else {
-        LOG.debug("failed to create new book with: " + bookDataFormData.toString());
+        LOG.debug("failed to create new book with: {}", bookDataFormData);
       }
       return "redirect:" + Page.BOOKLIST.getUrl();
     }
